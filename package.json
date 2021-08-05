@@ -4,7 +4,9 @@
   "description": "A simple and fun GUI implementation for displaying recent Cryptocurrency Market statistics.",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js",
+    "prestart": "npm install"
   },
   "repository": {
     "type": "git",
@@ -19,6 +21,7 @@
   "dependencies": {
     "express": "^4.17.1",
     "jquery": "^3.6.0",
-    "node-rest-client": "^3.1.0"
+    "node-rest-client": "^3.1.0",
+    "request-promise": "^4.2.6"
   }
 }

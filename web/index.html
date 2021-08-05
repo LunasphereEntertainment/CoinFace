@@ -8,38 +8,91 @@
 
     <link rel="stylesheet" href="stylesheets/global.css">
     <link rel="stylesheet" href="stylesheets/index.css">
+    <link rel="stylesheet" href="stylesheets/coin.info.css">
 </head>
 <body>
-    <div class="titlebar">
+    <!--<div class="titlebar">
         <h2>CoinFace</h2>
         <h6>Select a CryptoCurrency Type from below to view recent market stats.</h6>
-    </div>
+    </div>-->
 
-    <div class="grid-container g-r-4">
-        <div class="grid-column coin-card">
+    <div class="center-stage grid-container g-r-4" id="centerStage" style="display: none;">
+        <div class="grid-column coin-card" id="ccBtc">
             <div class="coin coin-btc">
                 <img src="assets/btc.png" alt="BitCoin Logo">
             </div>
             BitCoin
         </div>
-        <div class="grid-column coin-card">
+        <div class="grid-column coin-card" id="ccEth">
             <div class="coin coin-eth">
                 <img src="assets/ethereum.png" alt="Ethereum Logo">
             </div>
             Ethereum
         </div>
-        <div class="grid-column coin-card">
+        <div class="grid-column coin-card" id="ccLtc">
             <div class="coin coin-ltc">
                 <img src="assets/ltc.png" alt="LiteCoin Logo">
             </div>
             LiteCoin
         </div>
-        <div class="grid-column coin-card">
+        <div class="grid-column coin-card" id="ccDoge">
             <div class="coin coin-dgc">
                 <img src="assets/doge.png" alt="DogeCoin Logo">
             </div>
             DogeCoin
         </div>
     </div>
+
+
+    <div class="center-stage grid-container g-r-2" id="coinDeets" > <!--style="display: none;"-->
+        <div class="coin-info-panel">
+            <h2>Coin Information</h2>
+            <h4 id="coinTypeOut">SELECTED_COIN</h4>
+
+            <p></p>
+        </div>
+        <div class="coin-graph">
+            <div id="graphContainer"></div>
+        </div>
+    </div>
 </body>
+
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript">
+    let selectedCard;
+
+    $(".coin-card").on('click', selectType);
+
+    function selectType(e) {
+        if (selectedCard && selectedCard.id === e.target.id) {
+            clearSelection();
+            return;
+        }
+
+        let selectedIndex = 0;
+
+        selectedCard = e.target;
+
+        $(".coin-card").each((i, elem) => {
+            if (elem.id === selectedCard.id) {
+                // selectedIndex = i;
+                // elem.className = `${elem.className} inactive`;
+                elem.style.transitionDelay = "1s";
+            }
+
+            $(elem).addClass("inactive");
+        })
+
+        setTimeout(() => {
+            $("#centerStage").css({display: 'none'});
+            $("#coinDeets").css({display: 'block'});
+        }, 1800)
+
+    }
+
+    function clearSelection() {
+        $(".coin-card").removeClass("inactive");
+    }
+
+</script>
 </html>

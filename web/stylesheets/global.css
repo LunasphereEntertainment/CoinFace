@@ -1,19 +1,29 @@
-/* html, body {
-    width: 100vw;
-    height: 100vh;
-    margin: 0;
-} */
+@font-face {
+    src: url("/webfonts/NovaSquare/NovaSquare-Regular.ttf");
+    font-family: NovaSquare;
+}
+html, body {
+    margin: 0; padding: 0;
+}
 
 body {
     background: linear-gradient(to bottom, #000e36, #044453);
     background-repeat: no-repeat;
+    background-size: cover;
+    width: 100vw; height: 100vh;
+
+    overflow: hidden;
+}
+
+div.center-stage {
+    width: 99%;
+    height: 96%;
+    padding: 0;;.lk,j.
+    margin: 2% 20px 20px;
 
     color: #0cd;
 
     font-size: 20pt;
-
-    display: flex;
-    flex-direction: column;
 }
 
 div.grid-container {
@@ -24,6 +34,10 @@ div.grid-container {
 
 .grid-container.g-r-4 {
     grid-template-columns: 25% 25% 25% 25%;
+}
+
+.grid-container.g-r-2 {
+    grid-template-columns: 25% 75%;
 }
 
 @media only screen and (max-width: 1080px) {
@@ -37,7 +51,7 @@ div.grid-container {
     width: 90%;
     border-radius: 0 0 25% 25%;
     background: #002050;
-    
+
     margin: 0 auto;
     text-align: center;
 }

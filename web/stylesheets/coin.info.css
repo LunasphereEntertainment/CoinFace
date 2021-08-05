@@ -1,0 +1,23 @@
+div.coin-info-panel {
+    display: flex;
+
+    font-size: 18pt;
+
+    color: rgb(220, 255, 255);
+
+    flex-direction: column;
+    align-items: center;
+
+    animation: 1s info-panel-enter forwards;
+}
+
+.coin-info-panel > h2, h4 {
+    margin: 5px auto;
+}
+
+@keyframes info-panel-enter {
+    from {
+        transform: translateY(5%);
+        opacity: 0;
+    }
+}

@@ -11,7 +11,7 @@
 
     align-items: center;
     justify-content: center;
-    font: 24pt monospace;
+    font: 32pt NovaSquare, monospace;
 
     cursor: pointer;
 
@@ -30,7 +30,12 @@
     border: 14px solid rgba(0, 120, 240, 0.5);
 }
 
+.coin-card:active {
+    background:  rgba(25, 115, 180, 0.9);
+}
+
 .coin {
+    pointer-events: none;
     width: 175px;
     height: 175px;
     border-radius: 50%;
@@ -42,25 +47,34 @@
     align-items: center;
 
     transition: .25s;
+
+    background-position: -25px 0;
 }
 
 .coin-btc {
-    background: #998800;
+    background: linear-gradient(to right, #998800 20%, #efdb44, #998800 60%);
+
     box-shadow: 4px -4px 3px 2px #534800;
+
+    transition: .5s;
 }
 
 .coin-eth {
     background: #a42fc2;
+    background: linear-gradient(to right, #a42fc2 20%, #d779ef, #a42fc2 60%);
+
     box-shadow: 4px -4px 3px 2px #691080;
 }
 
 .coin-ltc {
     background: #a7a7a7;
+    background: linear-gradient(to right, #898989 20%, #d2d2d2, #898989 60%);
     box-shadow: 4px -4px 3px 2px #3d3d3d;
 }
 
 .coin-dgc {
     background: #bd9100;
+    background: linear-gradient(to right, #bd9100 20%, #ecc958, #bd9100 60%);
     box-shadow: 4px -4px 3px 2px #5c4600;
 }
 
@@ -73,5 +87,17 @@
 
 .coin-card:hover > .coin {
     filter: brightness(1.1);
-    transform: skewY(-3deg);
+    transform: skewY(-3deg) scale(1.2);
+}
+
+.coin-card:hover > .coin {
+    background-position: -125px 0;
+}
+
+
+.coin-card.inactive {
+    transition-duration: 1s;
+
+    transform: translateY(110%);
+    opacity: 0;
 }
