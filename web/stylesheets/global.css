@@ -1,0 +1,52 @@
+/* html, body {
+    width: 100vw;
+    height: 100vh;
+    margin: 0;
+} */
+
+body {
+    background: linear-gradient(to bottom, #000e36, #044453);
+    background-repeat: no-repeat;
+
+    color: #0cd;
+
+    font-size: 20pt;
+
+    display: flex;
+    flex-direction: column;
+}
+
+div.grid-container {
+    flex-grow: 1;
+
+    display: grid;
+}
+
+.grid-container.g-r-4 {
+    grid-template-columns: 25% 25% 25% 25%;
+}
+
+@media only screen and (max-width: 1080px) {
+    .grid-container.g-r-4 {
+        grid-template-columns: 100%;
+        grid-template-rows: 25% 25% 25% 25%;
+    }
+}
+
+.titlebar {
+    width: 90%;
+    border-radius: 0 0 25% 25%;
+    background: #002050;
+    
+    margin: 0 auto;
+    text-align: center;
+}
+
+h2, h6 {
+    display: inline-block;
+    margin: 5px 0 2px 0;
+}
+
+h6 {
+    padding-left: 50px;
+}
